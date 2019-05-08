@@ -1,20 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <!-- <CountCP
+      :handle-click="handleClickButton"
+      message="Hello word!"
+      name="Dong Nguyen"
+      value="This is valude default of props"
+    />-->
+    <ExampleOne/>
+    <hr>
+    <ExampleTwo/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+// import CountCP from './components/page/CountComponent.vue';
+import ExampleOne from './components/example/One.vue';
+import ExampleTwo from './components/example/Two.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    // CountCP,
+    ExampleOne,
+    ExampleTwo,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private handleClickButton(data: string): void {
+    console.log(data);
+  }
+}
 </script>
 
 <style lang="scss">
